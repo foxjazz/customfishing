@@ -29,7 +29,7 @@ export class SpcontainerComponent implements OnInit {
   populateData() {
     // let a =
       this.c = ({list: []});
-      let r: sprow = ({siblings: [], rowtype: "4"});
+      let r: sprow = ({siblings: [], rowtype: "c1"});
 
       this.c.list.push(r);
       let a: spdata = ({title: "title 1", child: null, level: 1, content: "mycontent", id: 1})
@@ -40,14 +40,14 @@ export class SpcontainerComponent implements OnInit {
       r.siblings.push(a);
       a = ({title: "title 4", child: null, level: 1, content: "mycontent", id: 1})
       r.siblings.push(a);
-      r = ({siblings: [], rowtype: "3"});
+      r = ({siblings: [], rowtype: "c2"});
       this.c.list.push(r);
       a = ({title: "title 5", child: null, level: 1, content: "mycontent", id: 1})
       r.siblings.push(a);
       a = ({title: "title 6", child: null, level: 1, content: "mycontent", id: 1})
       r.siblings.push(a);
       a = ({title: "title 7", child: null, level: 1, content: "mycontent", id: 1})
-      r = ({siblings: [], rowtype: "3"});
+      r = ({siblings: [], rowtype: "c3"});
       this.c.list.push(r);
       a = ({title: "title 8", child: null, level: 1, content: "mycontent", id: 1})
       r.siblings.push(a);

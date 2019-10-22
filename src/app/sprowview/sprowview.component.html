@@ -2,10 +2,11 @@
 <div class="div_top_hypers">
   row view {{row}}
   <ul class="div_top_hypers">
-    <li *ngFor="let data of siblings" class="try1">
+    <li *ngFor="let data of siblings">
 
 
-      <app-data [setdata]="data"></app-data>
+      <app-data [setdata]="data" class={{cclass}}></app-data>
+
     </li>
   </ul>
 </div>

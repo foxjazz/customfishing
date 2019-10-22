@@ -9,6 +9,7 @@ import {Input} from '@angular/core';
 export class SprowviewComponent implements OnInit {
 
   public row;
+  public cclass="";
   public siblings: spdata[];
   @Input() set blaster(sib: spdata[]) {
     this.siblings = sib;
@@ -16,6 +17,11 @@ export class SprowviewComponent implements OnInit {
   @Input() set rowNumber(r: number){
     this.row = r;
   }
+
+  @Input() set cssclass(cn: string){
+    this.cclass = cn;
+  }
+
   constructor() { }
 
 

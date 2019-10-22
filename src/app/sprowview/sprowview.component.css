@@ -12,11 +12,33 @@
   display: inline;
 }
 .try1 app-data{
-  color: brown;
+
   text-align: center;
   padding: 16px;
   text-decoration: none;
 }
+.c1{
+  color: brown;
+}
+.c2{
+  color: orange;
+}
+.c3{
+  color: green;
+}
+.try2 app-data{
+
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+.try3 app-data{
+
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
