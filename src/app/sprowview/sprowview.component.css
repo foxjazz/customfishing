@@ -1,0 +1,30 @@
+.div_top_hypers {
+  background-color:#eeeeee;
+
+}
+.ul_top_hypers {
+  display: flex;
+  justify-content:space-around;
+  list-style-type:none;
+}
+.inline app-data{
+  display: block;
+  display: inline;
+}
+.try1 app-data{
+  color: brown;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
