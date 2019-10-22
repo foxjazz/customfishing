@@ -1,0 +1,4 @@
+interface spcontainer
+{
+  list: sprow[];
+}

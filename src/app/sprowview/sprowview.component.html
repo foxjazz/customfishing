@@ -1,0 +1,10 @@
+
+<div>
+  row view {{row}}
+  <ul>
+    <li *ngFor="let data of siblings">
+      sib:
+      <app-data [setdata]="data"></app-data>
+    </li>
+  </ul>
+</div>

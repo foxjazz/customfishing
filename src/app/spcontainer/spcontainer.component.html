@@ -1,0 +1,8 @@
+<div>
+  this is the container view
+  <ul>
+    <li *ngFor="let h of list; let i = index">
+      <app-sprowview [blaster]="h.siblings" [rowNumber]="i"></app-sprowview>
+    </li>
+  </ul>
+</div>
