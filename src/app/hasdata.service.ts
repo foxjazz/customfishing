@@ -8,4 +8,8 @@ export class HasdataService {
   public sink = new Subject<spcontainer>();
   spdata: spcontainer = null;
   constructor() { }
+
+  refresh(){
+    this.sink.next(this.spdata);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Input} from '@angular/core';
+import {HasdataService} from '../hasdata.service';
 
 @Component({
   selector: 'app-sprowview',
@@ -8,6 +9,7 @@ import {Input} from '@angular/core';
 })
 export class SprowviewComponent implements OnInit {
 
+  public dataSvs;
   public row;
   public cclass="";
   public siblings: spdata[];
@@ -22,7 +24,13 @@ export class SprowviewComponent implements OnInit {
     this.cclass = cn;
   }
 
-  constructor() { }
+  updateRowType(typ: string){
+    this.cclass = typ;
+    this.dataSvs.refresh();
+  }
+  constructor(private svs: HasdataService) {
+    this.dataSvs = svs;
+  }
 
 
   ngOnInit() {
