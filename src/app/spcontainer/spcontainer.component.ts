@@ -8,7 +8,7 @@ import {Subject} from 'rxjs';
   styleUrls: ['./spcontainer.component.css']
 })
 export class SpcontainerComponent implements OnInit {
-
+  public arrange = false;
   public dataService: HasdataService;
   public c: spcontainer;
   public cdata: spcontainer;

@@ -6,6 +6,7 @@ import {Subject} from 'rxjs';
 })
 export class HasdataService {
   public sink = new Subject<spcontainer>();
+  public canArrange = new Subject<boolean>();
   spdata: spcontainer = null;
   constructor() { }
 

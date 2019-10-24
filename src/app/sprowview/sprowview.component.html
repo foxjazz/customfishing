@@ -1,8 +1,16 @@
-
-<div class="div_top_hypers">
-  row view {{row}}
-  <ul class="div_top_hypers">
+<div *ngIf="arrange">
+  config 1; config 2; config 3; config 4;
+  <ul>
     <li *ngFor="let data of siblings">
+      <app-data [setdata]="data"></app-data>
+    </li>
+  </ul>
+  <button (click)="setCanArrange(true)">OK</button>
+</div>
+<div class="div_top_hypers">
+  <button *ngIf="canArrange" (click)="setCanArrange(false)">arrange</button>
+  <ul class="ulhorizontal">
+    <li *ngFor="let data of siblings" class="lifl">
 
 
       <app-data [setdata]="data" class={{cclass}}></app-data>

@@ -1,22 +1,10 @@
 .div_top_hypers {
-  background-color:#eeeeee;
+  background-color:#1d2528;
 
 }
-.ul_top_hypers {
-  display: flex;
-  justify-content:space-around;
-  list-style-type:none;
-}
-.inline app-data{
-  display: block;
-  display: inline;
-}
-.try1 app-data{
 
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
+
+
 .c1{
   color: brown;
 }
@@ -39,7 +27,7 @@
   text-decoration: none;
 }
 
-ul {
+.ulhorizontal {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -47,6 +35,6 @@ ul {
   background-color: #333333;
 }
 
-li {
+.lifl {
   float: left;
 }

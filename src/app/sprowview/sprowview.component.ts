@@ -13,6 +13,13 @@ export class SprowviewComponent implements OnInit {
   public row;
   public cclass="";
   public siblings: spdata[];
+  public canArrange = true;
+  public arrange = false;
+
+  public setCanArrange(f: boolean){
+    this.svs.canArrange.next(f);
+    this.arrange = !f;
+  }
   @Input() set blaster(sib: spdata[]) {
     this.siblings = sib;
   }
@@ -30,6 +37,7 @@ export class SprowviewComponent implements OnInit {
   }
   constructor(private svs: HasdataService) {
     this.dataSvs = svs;
+    this.svs.canArrange.subscribe(a => this.canArrange = a);
   }
 
 
