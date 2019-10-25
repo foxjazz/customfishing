@@ -2,3 +2,8 @@ body{
   background-color: #1d2528;
   color: lightgrey;
 }/* You can add global styles to this file, and also import other style files */
+.gird-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 40px 200px;
+}
