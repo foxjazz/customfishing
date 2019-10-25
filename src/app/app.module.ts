@@ -7,6 +7,7 @@ import { DataComponent } from './data/data.component';
 import { DriverComponent } from './driver/driver.component';
 import { SpcontainerComponent } from './spcontainer/spcontainer.component';
 import { SprowviewComponent } from './sprowview/sprowview.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SprowviewComponent } from './sprowview/sprowview.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
