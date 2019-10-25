@@ -1,5 +1,8 @@
 <div *ngIf="arrange">
-  config 1; config 2; config 3; config 4;
+
+  <img src="../../assets/rowtype1.png" alt="two column" height="16" width="32" (click)="setConfig('c1')">
+
+  <img src="../../assets/rowtype2.png" alt="three column" height="16" width="32" (click)="setConfig('c2')">
   <ul>
     <li *ngFor="let data of siblings">
       <app-data [setdata]="data"></app-data>

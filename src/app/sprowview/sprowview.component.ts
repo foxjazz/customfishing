@@ -15,7 +15,9 @@ export class SprowviewComponent implements OnInit {
   public siblings: spdata[];
   public canArrange = true;
   public arrange = false;
-
+  public setConfig(cfg: string){
+    this.cclass = cfg;
+  }
   public setCanArrange(f: boolean){
     this.svs.canArrange.next(f);
     this.arrange = !f;
