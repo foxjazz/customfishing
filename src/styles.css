@@ -1,6 +1,6 @@
 body{
-  background-color: #1d2528;
-  color: lightgrey;
+  background-color: #fff;
+  color: #4A4A4A;
 }/* You can add global styles to this file, and also import other style files */
 .gird-container{
   display: grid;
@@ -9,4 +9,23 @@ body{
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Akkurat Pro", arial, sans-serif; }
+
+app-spcontainer {
+	height: 600px;
+	width: 100%;
+    background-color: #f5f5f5;
+}
+
+li .div_top_hypers {
+    background-color: black;
+}
+li:nth-child(1) .div_top_hypers {
+    margin-top: 10px;
+}
+li:nth-child(odd) .div_top_hypers {
+    background-color: #fff;
+}
+li:nth-child(even) .div_top_hypers {
+    background-color: #e6e6e6;
+}
