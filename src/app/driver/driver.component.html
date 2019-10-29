@@ -1,17 +1,20 @@
 <div>
   this is the driver view
-  <button (click)="createMidRow()">Create Row</button>
+  <div>
+    <button (click)="createMainRow()">Create Main Row with item</button>
+  </div>
+  <div>
+    <button (click)="createNewCol()">Create Col - item</button>
+  </div>
+  <div>
+    <button (click)="createRow()">createRow</button>
+  </div>
 
-  <ul>
-    <li *ngFor="let h of splistData.list; let i = index">
-      <app-data [setdata]="h" (click)="select(i)"></app-data>
 
-    </li>
-  </ul>
 
   <mat-nav-list>
     <mat-list-item *ngFor="let link of splistData.list; let i = index">
-      <app-data [setdata]="link" (click)="select(i)"></app-data>
+      <app-data [setdata]="link" (click)="select(i)" cdkDrag></app-data>
       <button mat-icon-button (click)="select(i)">
         {{link.title}}
       </button>

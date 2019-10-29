@@ -22,7 +22,7 @@ export class SpcontainerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.rowSink.subscribe(h => {
+    this.dataService.mainRowSink.subscribe(h => {
       this.mainRows.push(h);
     });
     this.populateData();
@@ -58,7 +58,7 @@ export class SpcontainerComponent implements OnInit {
       a = ({title: "Mercedes", child: null, level: 1, content: "mycontent", id: 12, selectCss: "normal"});
       spl.list.push(a);
 
-    this.dataService.splist.next(spl);
+      this.dataService.splist.next(spl);
 
 
 

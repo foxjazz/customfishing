@@ -31,15 +31,29 @@ export class DriverComponent implements OnInit {
     }
     this.splistData.list[i].selectCss = "highlight";
   }
-  createMidRow(){
+
+  createNewCol(){
     if (this.selected == undefined)
       return;
+    const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1}
+    this.hds.addCol(spd);
+  }
+  createRow() {
+    if (this.selected == undefined)
+      return;
+    const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1}
+    this.hds.addCol(spd);
+  }
+  createMainRow(){
+    if (this.selected == undefined) {
+      return;
+    }
     const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1}
     const d = new Array<spdata>();
     d.push(spd);
     const v: vert = {spdataList: d };
     const vz: vert[] = new Array<vert>();
     const h: hz = {verts: vz, rowCssType:"normal"};
-    this.hds.addRow(h);
+    this.hds.addMainRow(h);
   }
 }

@@ -7,15 +7,28 @@ import {Subject} from 'rxjs';
 export class HasdataService {
   public sink = new Subject<spcontainer>();
   public splist = new Subject<splist>();
-  public rowSink = new Subject<hz>();
+  public rowSink = new Subject<spdata>();
+  public colSink = new Subject<spdata>();
+  public mainRowSink = new Subject<hz>();
   public canArrange = new Subject<boolean>();
   spdata: spcontainer = null;
+
+
+
   constructor() { }
 
-  refresh(){
+  refresh() {
     this.sink.next(this.spdata);
   }
-  public addRow(h: hz){
-    this.rowSink.next(h);
+
+  public addMainRow(h: hz) {
+    this.mainRowSink.next(h);
+  }
+
+  public addCol(sp: spdata) {
+    this.colSink.next(sp);
+  }
+  public addRow(sp: spdata) {
+    this.rowSink.next(sp);
   }
 }
