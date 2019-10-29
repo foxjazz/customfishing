@@ -29,3 +29,29 @@ li:nth-child(odd) .div_top_hypers {
 li:nth-child(even) .div_top_hypers {
     background-color: #e6e6e6;
 }
+
+button {
+	display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    margin: 10px 5px;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    min-width: 80px;
+    padding: .625rem 1.0625rem;
+    font-size: .875rem;
+    line-height: 1.25;
+    transition: all .15s ease-in-out;
+    color: #fff;
+    background-color: green;
+    border-color: green;
+
+}
