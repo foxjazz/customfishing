@@ -6,5 +6,8 @@
   id: {{rownumber}} {{data.title}}
 
   </p>
+  <div *ngIf="hasData">
+    <app-data *ngIf="hasData" [setdata]="data"> </app-data>
+  </div>
 </div>
 

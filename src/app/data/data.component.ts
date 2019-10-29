@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class DataComponent  {
   public data: spdata;
+  public hasData: boolean;
   public color: string;
   public selCss: string;
   public rownumber: number;
@@ -15,6 +16,7 @@ export class DataComponent  {
   }
   constructor() {
     this.selCss = "normal";
+    this.hasData = false;
   }
 
 

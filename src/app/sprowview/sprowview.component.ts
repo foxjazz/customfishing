@@ -15,7 +15,7 @@ export class SprowviewComponent implements OnInit {
 
   public canArrange = true;
   public arrange = false;
-  public columns: hz[];
+  public columns: vert[];
   constructor(private svs: HasdataService) {
     this.dataSvs = svs;
     this.columns = [];
@@ -24,19 +24,18 @@ export class SprowviewComponent implements OnInit {
   ngOnInit() {
    this.dataSvs.rowSink.subscribe(sp => {
      const cdx = this.columns.length - 1;
-     const idx = this.columns[cdx].verts.length - 1;
-     if (this.columns[cdx].verts[idx].spdataList == null){
-       this.columns[cdx].verts[idx].spdataList = new Array<spdata>();
+     const idx = this.columns[cdx].spdataList.length - 1;
+     if (this.columns[cdx].spdataList == null){
+       this.columns[cdx].spdataList = new Array<spdata>();
      }
-     this.columns[cdx].verts[idx].spdataList.push(sp);
+     this.columns[cdx].spdataList.push(sp);
    });
 
    this.dataSvs.colSink.subscribe(sp => {
      if (this.columns.length < 4) {
-       const vert = new Array<vert>();
-       vert.push(sp);
-       const col: hz = {verts: vert, rowCssType: "normal"};
-       this.columns.push(col);
+       const vert: vert = {spdataList: new Array<spdata>()}
+       vert.spdataList.push(sp);
+       this.columns.push(vert);
      }
    });
   }
@@ -47,8 +46,8 @@ export class SprowviewComponent implements OnInit {
     this.svs.canArrange.next(f);
     this.arrange = !f;
   }
-  @Input() set blaster(h: hz) {
-    this.columns.push(h);
+  @Input() set blaster(hz: hz) {
+    this.columns = hz.verts;
   }
   @Input() set rowNumber(r: number){
     this.row = r;
