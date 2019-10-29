@@ -39,7 +39,7 @@ export class DriverComponent implements OnInit {
     d.push(spd);
     const v: vert = {spdataList: d };
     const vz: vert[] = new Array<vert>();
-    const h: hz = {verts: vz};
+    const h: hz = {verts: vz, rowCssType:"normal"};
     this.hds.addRow(h);
   }
 }

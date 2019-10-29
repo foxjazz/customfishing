@@ -8,4 +8,13 @@
 
     </li>
   </ul>
+
+  <mat-nav-list>
+    <mat-list-item *ngFor="let link of splistData.list; let i = index">
+      <app-data [setdata]="link" (click)="select(i)"></app-data>
+      <button mat-icon-button (click)="select(i)">
+        {{link.title}}
+      </button>
+    </mat-list-item>
+  </mat-nav-list>
 </div>
