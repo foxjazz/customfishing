@@ -1,4 +1,4 @@
 interface spcontainer
 {
-  list: sprow[];
+  list: hz[];
 }

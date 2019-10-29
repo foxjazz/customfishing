@@ -12,9 +12,10 @@ export class SprowviewComponent implements OnInit {
   public dataSvs;
   public row;
   public cclass="";
-  public siblings: spdata[];
+
   public canArrange = true;
   public arrange = false;
+  public columns: hz;
   public setConfig(cfg: string){
     this.cclass = cfg;
   }
@@ -22,8 +23,8 @@ export class SprowviewComponent implements OnInit {
     this.svs.canArrange.next(f);
     this.arrange = !f;
   }
-  @Input() set blaster(sib: spdata[]) {
-    this.siblings = sib;
+  @Input() set blaster(h: hz) {
+    this.columns = h;
   }
   @Input() set rowNumber(r: number){
     this.row = r;

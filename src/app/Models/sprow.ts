@@ -1,5 +1,7 @@
 
-interface sprow{
-  siblings: spdata[];
-  rowtype: string;
+interface sprow {
+  hz: hz;
+  rowCssType: string;
 }
+
+

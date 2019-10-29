@@ -8,10 +8,14 @@ import {Component, Input, OnInit} from '@angular/core';
 export class DataComponent  {
   public data: spdata;
   public color: string;
+  public selCss: string;
+  public rownumber: number;
   @Input() set setdata(d: spdata) {
     this.data = d;
   }
-  constructor() { }
+  constructor() {
+    this.selCss = "normal";
+  }
 
 
 

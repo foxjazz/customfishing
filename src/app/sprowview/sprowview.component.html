@@ -6,7 +6,7 @@
   <img src="../../assets/rowtype1.png" alt="two column" height="16" width="32" (click)="setConfig('c3')">
   <img src="../../assets/rowtype2.png" alt="three column" height="16" width="32" (click)="setConfig('c4')">
   <ul>
-    <li *ngFor="let data of siblings">
+    <li *ngFor="let data of columns">
       <app-data [setdata]="data"></app-data>
     </li>
   </ul>
@@ -15,10 +15,14 @@
 <div class="div_top_hypers">
   <button *ngIf="canArrange" (click)="setCanArrange(false)">arrange</button>
   <ul class="ulhorizontal">
-    <li *ngFor="let data of siblings" class="lifl">
+    <li *ngFor="let verts of columns" class="lifl">
 
+      <ul>
+        <li *ngFor="let vert of verts">
+          <app-data [setdata]="vert" class={{cclass}}></app-data>
+        </li>
+      </ul>
 
-      <app-data [setdata]="data" class={{cclass}}></app-data>
 
     </li>
   </ul>

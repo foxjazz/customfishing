@@ -1,0 +1,3 @@
+interface vert {
+  spdataList: spdata[];
+}

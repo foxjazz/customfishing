@@ -1,5 +1,11 @@
 <div>
-  this is the left column
+  this is the driver view
+  <button (click)="createMidRow()">Create Row</button>
 
+  <ul>
+    <li *ngFor="let h of splistData.list; let i = index">
+      <app-data [setdata]="h" (click)="select(i)"></app-data>
+
+    </li>
+  </ul>
 </div>
-
