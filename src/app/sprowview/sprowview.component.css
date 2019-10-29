@@ -1,9 +1,12 @@
 .div_top_hypers {
-  background-color:#1d2528;
-
+  background-color: pink;
+  width: 99%;
+  min-height: 40px;
+  padding: 5px;
+  margin: 0 .5% .5% .5%;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
-
-
 
 .c1{
   color: brown;
