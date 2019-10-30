@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Input} from '@angular/core';
 import {HasdataService} from '../hasdata.service';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-sprowview',
@@ -47,6 +48,18 @@ export class SprowviewComponent implements OnInit {
      }
    });
   }
+
+  drop(event: CdkDragDrop<spdata[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+    }
+  }
+
   public setConfig(cfg: string) {
     this.cclass = cfg;
   }
