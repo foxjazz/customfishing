@@ -26,6 +26,7 @@ export class DataComponent  {
     this.hds.clearSink.subscribe(() => {
       if(this.hds.pass != this.pass) {
         this.data.isSelected = false;
+        this.selCss = "normal";
       }
     });
   }
@@ -35,6 +36,7 @@ export class DataComponent  {
     this.pass = this.hds.pass + 1;
     this.hds.pass = this.pass;
     this.data.isSelected = true;
+    this.selCss = "highlight"
   }
 
 
