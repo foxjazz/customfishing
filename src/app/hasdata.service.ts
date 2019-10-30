@@ -9,6 +9,7 @@ export class HasdataService {
   public splist = new Subject<splist>();
   public rowSink = new Subject<spdata>();
   public colSink = new Subject<spdata>();
+  public clearSink = new Subject<boolean>();
   public mainRowSink = new Subject<hz>();
   public canArrange = new Subject<boolean>();
   spdata: spcontainer = null;

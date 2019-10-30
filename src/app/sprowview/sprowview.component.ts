@@ -12,7 +12,7 @@ export class SprowviewComponent implements OnInit {
   public dataSvs;
   public row;
   public cclass="";
-
+  public onSubscribers = false;
   public canArrange = true;
   public arrange = false;
   public columns: vert[];
@@ -23,28 +23,37 @@ export class SprowviewComponent implements OnInit {
   }
   ngOnInit() {
    this.dataSvs.rowSink.subscribe(sp => {
-     const cdx = this.columns.length - 1;
-     const idx = this.columns[cdx].spdataList.length - 1;
-     if (this.columns[cdx].spdataList == null){
-       this.columns[cdx].spdataList = new Array<spdata>();
+     if (!this.onSubscribers) {
+       return;
      }
-     this.columns[cdx].spdataList.push(sp);
+     const cdx = this.columns.length - 1;
+     for(const c of this.columns) {
+       for (const tt of c.spdataList){
+         if (tt.isSelected) {
+            c.spdataList.push(sp);
+         }
+       }
+     }
    });
 
    this.dataSvs.colSink.subscribe(sp => {
+     if (!this.onSubscribers) {
+       return;
+     }
      if (this.columns.length < 4) {
-       const vert: vert = {spdataList: new Array<spdata>()}
-       vert.spdataList.push(sp);
-       this.columns.push(vert);
+       const v: vert = {spdataList: new Array<spdata>()};
+       v.spdataList.push(sp);
+       this.columns.push(v);
      }
    });
   }
-  public setConfig(cfg: string){
+  public setConfig(cfg: string) {
     this.cclass = cfg;
   }
-  public setCanArrange(f: boolean){
+  public setCanArrange(f: boolean) {
     this.svs.canArrange.next(f);
     this.arrange = !f;
+    this.onSubscribers = !f;
   }
   @Input() set blaster(hz: hz) {
     this.columns = hz.verts;

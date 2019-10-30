@@ -5,4 +5,5 @@ interface spdata {
   level: number;
   child: spdata;
   selectCss: string;
+  isSelected: boolean;
 }

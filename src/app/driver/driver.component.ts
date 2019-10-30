@@ -35,20 +35,20 @@ export class DriverComponent implements OnInit {
   createNewCol(){
     if (this.selected == undefined)
       return;
-    const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1}
+    const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1, isSelected: false}
     this.hds.addCol(spd);
   }
   createRow() {
     if (this.selected == undefined)
       return;
-    const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1}
+    const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1, isSelected: false}
     this.hds.addCol(spd);
   }
   createMainRow(){
     if (this.selected == undefined) {
       return;
     }
-    const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1}
+    const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1, isSelected: false}
     const d = new Array<spdata>();
     d.push(spd);
     const v: vert = {spdataList: d };

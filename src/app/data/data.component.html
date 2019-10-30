@@ -6,6 +6,13 @@
   id: {{rownumber}} {{data.title}}
 
   </p>
+  <div>
+    <button (click)="select()">next right</button>
+
+  </div>
+  <div>
+
+  </div>
   <div *ngIf="hasData">
     <app-data *ngIf="hasData" [setdata]="data"> </app-data>
   </div>
