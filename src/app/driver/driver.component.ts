@@ -42,7 +42,7 @@ export class DriverComponent implements OnInit {
     if (this.selected == undefined)
       return;
     const spd: spdata = {title: this.splistData.list[this.selected].title, selectCss: "normal", child: null, id: 1, content: "", level: 1, isSelected: false}
-    this.hds.addCol(spd);
+    this.hds.addRow(spd);
   }
   createMainRow(){
     if (this.selected == undefined) {
