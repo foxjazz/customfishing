@@ -23,6 +23,7 @@ export class SpcontainerComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.mainRowSink.subscribe(h => {
+
       this.mainRows.push(h);
     });
     this.populateData();

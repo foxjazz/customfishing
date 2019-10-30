@@ -13,7 +13,7 @@ export class HasdataService {
   public mainRowSink = new Subject<hz>();
   public canArrange = new Subject<boolean>();
   spdata: spcontainer = null;
-
+  public pass = 0;
 
 
   constructor() { }

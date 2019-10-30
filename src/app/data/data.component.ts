@@ -14,6 +14,7 @@ export class DataComponent  {
   public rownumber: number;
   public isSelected = false;
   public direction: string;
+  private pass: number;
   private hds: HasdataService;
   @Input() set setdata(d: spdata) {
     this.data = d;
@@ -23,12 +24,16 @@ export class DataComponent  {
     this.selCss = "normal";
     this.hasData = false;
     this.hds.clearSink.subscribe(() => {
-      this.data.isSelected = false;
+      if(this.hds.pass != this.pass) {
+        this.data.isSelected = false;
+      }
     });
   }
   select() {
     // this.direction = s;
     this.hds.clearSink.next(true);
+    this.pass = this.hds.pass + 1;
+    this.hds.pass = this.pass;
     this.data.isSelected = true;
   }
 
