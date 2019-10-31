@@ -4,6 +4,12 @@ interface spdata {
   id: number;
   level: number;
   child: spdata;
+  indentStep: number;
+
+  indentCss: string;
   selectCss: string;
   isSelected: boolean;
 }
+
+
+

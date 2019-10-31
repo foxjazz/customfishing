@@ -19,3 +19,9 @@
     margin-bottom: 0;
     margin-top: 5px;
 }
+.indent_1{
+  text-indent: 8px;
+}
+.indent_2{
+  text-indent: 16px;
+}

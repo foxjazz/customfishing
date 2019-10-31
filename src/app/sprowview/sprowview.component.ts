@@ -59,7 +59,25 @@ export class SprowviewComponent implements OnInit {
         event.currentIndex);
     }
   }
+  indentRight(i: number, ii: number) {
+    const obj = this.columns[i].spdataList[ii];
+    if (obj.indentStep === 1) {
+      obj.indentStep = 2;
+    }
+    if (obj.indentStep === 0) {
+     obj.indentStep = 1;
+    }
 
+  }
+  indentLeft(i: number, ii: number) {
+    const obj = this.columns[i].spdataList[ii];
+    if (obj.indentStep === 1) {
+      obj.indentStep = 0;
+    }
+    if (obj.indentStep === 2) {
+      obj.indentStep = 1;
+    }
+  }
   public setConfig(cfg: string) {
     this.cclass = cfg;
   }

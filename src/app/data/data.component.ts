@@ -14,10 +14,14 @@ export class DataComponent  {
   public rownumber: number;
   public isSelected = false;
   public direction: string;
+
+  get indentCss(): string {
+      return "indent_" + this.data.indentStep;
+  }
   private pass: number;
   private hds: HasdataService;
   @Input() set setdata(d: spdata) {
-    this.data = d;
+    this.data = d; d.indentStep = 0;
   }
   constructor(private ds: HasdataService) {
     this.hds = ds;
