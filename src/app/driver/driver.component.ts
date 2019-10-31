@@ -11,7 +11,7 @@ export class DriverComponent implements OnInit {
   public splistData: splist;
   private hds: HasdataService;
   private selected: number;
-
+  public list = [];
   constructor(private ds: HasdataService) {
     this.hds = ds;
   }
@@ -19,8 +19,9 @@ export class DriverComponent implements OnInit {
 
   ngOnInit() {
     this.hds.splist.subscribe(a => {
-      if(a != null) {
+      if (a != null) {
         this.splistData = a;
+        this.list = a.list;
       }
     });
   }

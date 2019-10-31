@@ -19,7 +19,7 @@
   </ul>-->
 
   <div *ngFor="let col of columns; let i = index" class="lifl"cdkDropList class="example-list"
-       #columns[i].spdataList="cdkDropList"
+
        [cdkDropListData]="col.spdataList"
        id="dropListDesto"
        (cdkDropListDropped)="drop($event)">
