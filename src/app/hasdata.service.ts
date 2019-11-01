@@ -12,6 +12,8 @@ export class HasdataService {
   public clearSink = new Subject<boolean>();
   public mainRowSink = new Subject<hz>();
   public canArrange = new Subject<boolean>();
+  public getCols = new Subject<number>();
+
   spdata: spcontainer = null;
   public pass = 0;
 

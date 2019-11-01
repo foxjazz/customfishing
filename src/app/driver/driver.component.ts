@@ -12,6 +12,7 @@ export class DriverComponent implements OnInit {
   private hds: HasdataService;
   private selected: number;
   public list = [];
+  public destoList = [];
   constructor(private ds: HasdataService) {
     this.hds = ds;
   }
@@ -22,6 +23,12 @@ export class DriverComponent implements OnInit {
       if (a != null) {
         this.splistData = a;
         this.list = a.list;
+      }
+    });
+    this.hds.getCols.subscribe(a => {
+      this.destoList = [];
+      for (let i = 0; i < a; i++){
+        this.destoList.push('dropListDesto' + i);
       }
     });
   }

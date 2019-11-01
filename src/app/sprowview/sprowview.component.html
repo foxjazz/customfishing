@@ -7,9 +7,9 @@
   <img src="../../assets/rowtype2.png" alt="three column" height="16" width="32" (click)="setConfig('c4')">
   </div>
   <div>
-    <ul>
+    <ul cdkDropListGroup>
       <li *ngFor="let col of columns; let i = index" class="lifl">
-        <app-verticle [setRows]="col.spdataList"></app-verticle>
+        <app-verticle [setRows]="col.spdataList" [index]="i"></app-verticle>
       </li>
     </ul>
   </div>

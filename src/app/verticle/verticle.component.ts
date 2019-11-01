@@ -10,6 +10,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 export class VerticleComponent implements OnInit {
 
   @Input('setRows') rows: spdata[];
+  @Input() index;
 //  rows: spdata[];
   hds: HasdataService;
   public cclass="";
@@ -20,7 +21,14 @@ export class VerticleComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  getDragDestoIndex(i: number): string {
+    let idx = 0;
+    if (i < 4)
+      idx =  i + 1;
+    if (i === 4)
+      idx =  1;
+    return "dropListDesto" + idx;
+  }
   indentRight(i: number) {
     const obj = this.rows[i];
     if (obj.indentStep < 2){

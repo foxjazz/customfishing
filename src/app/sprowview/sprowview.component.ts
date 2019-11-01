@@ -45,6 +45,7 @@ export class SprowviewComponent implements OnInit {
        const v: vert = {spdataList: new Array<spdata>()};
        v.spdataList.push(sp);
        this.columns.push(v);
+       this.svs.getCols.next(this.columns.length);
      }
    });
   }

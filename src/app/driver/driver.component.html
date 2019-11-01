@@ -15,7 +15,7 @@
   <mat-nav-list>
     <mat-list-item *ngFor="let link of splistData.list; let i = index" cdkDropList
                    [cdkDropListData]="splistData.list"
-                   [cdkDropListConnectedTo]="['dropListDesto']"
+                   [cdkDropListConnectedTo]="['dropListDesto0']"
     >
       <app-data [setdata]="link" (click)="select(i)" [cdkDragData]="link" cdkDrag></app-data>
       <button mat-icon-button (click)="select(i)">

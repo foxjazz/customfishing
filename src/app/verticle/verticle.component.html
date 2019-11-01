@@ -1,12 +1,13 @@
 <mat-list class="example-list"
           cdkDropList
           [cdkDropListData]="rows"
-          id="dropListDesto"
+          id="dropListDesto{{index}}"
+          [cdkDropListConnectedTo]="getDragDestoIndex(index)"
           (cdkDropListDropped)="drop($event)">
   <div *ngFor="let row of rows;let ii = index">
-
+    index{{index}}
     <button class="mat-button" (click)="indentLeft(ii)"><<</button>
     <button class="mat-button" (click)="indentRight(ii)">>></button>
-    <app-data [setdata]="row" class="{{cclass}}"></app-data>
+    <app-data [setdata]="row" class="{{cclass}}" cdkDrag></app-data>
   </div>
 </mat-list>
