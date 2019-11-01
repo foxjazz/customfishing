@@ -18,9 +18,7 @@
                    [cdkDropListConnectedTo]="['dropListDesto0']"
     >
       <app-data [setdata]="link" (click)="select(i)" [cdkDragData]="link" cdkDrag></app-data>
-      <button mat-icon-button (click)="select(i)">
-        {{link.title}}
-      </button>
+
     </mat-list-item>
   </mat-nav-list>
 </div>
