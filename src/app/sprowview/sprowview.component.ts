@@ -49,7 +49,26 @@ export class SprowviewComponent implements OnInit {
      }
    });
   }
+  deleteSpData() {
+          for(const c of this.columns){
+            // tslint:disable-next-line:no-shadowed-variable
+            let idx = 0;
+            for (const item of c.spdataList){
+              if(item.isSelected) {
+                c.spdataList.splice(idx,1);
+              }
+              idx++;
+            }
+          }
+          let idx = 0;
+          for (const c of this.columns) {
 
+            if (c.spdataList.length === 0) {
+              this.columns.splice(idx, 1);
+            }
+            idx++;
+          }
+  }
 
   drop(event: CdkDragDrop<spdata[]>) {
     if (event.previousContainer === event.container) {
