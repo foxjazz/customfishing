@@ -1,21 +1,28 @@
+.grid-container{
+  display: grid;
+
+  grid-template-rows: auto;
+}
+
 .div_top_hypers {
-  background-color: pink;
+  background-color: #291f1f;
   width: 99%;
   min-height: 40px;
   padding: 5px;
   margin: 0 .5% .5% .5%;
   border-radius: 5px;
   box-sizing: border-box;
+  float: top;
 }
 
 .c1{
-  color: brown;
+  color: #ef3f3f;
 }
 .c2{
-  color: orange;
+  color: #ffa500;
 }
 .c3{
-  color: green;
+  color: #00e300;
 }
 .try2 app-data{
 
@@ -44,10 +51,10 @@
 .example-list {
   width: 500px;
   max-width: 100%;
-  border: solid 1px #ccc;
+  border: solid 1px #e4e4e4;
   min-height: 60px;
   display: block;
-  background: white;
+  background: #1f1f1f;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -55,14 +62,14 @@
 .example-box {
   padding: 20px 10px;
   border-bottom: solid 1px #ccc;
-  color: rgba(0, 0, 0, 0.87);
+  color: blue;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background: white;
+  background: #141414;
   font-size: 14px;
 }
 

@@ -28,7 +28,7 @@ export class SprowviewComponent implements OnInit {
        return;
      }
      const cdx = this.columns.length - 1;
-     for(const c of this.columns) {
+     for (const c of this.columns) {
        for (const tt of c.spdataList){
          if (tt.isSelected) {
             c.spdataList.push(sp);
@@ -48,6 +48,7 @@ export class SprowviewComponent implements OnInit {
      }
    });
   }
+
 
   drop(event: CdkDragDrop<spdata[]>) {
     if (event.previousContainer === event.container) {

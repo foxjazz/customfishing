@@ -1,13 +1,21 @@
-<div *ngIf="arrange">
-
+<div *ngIf="arrange" class="grid-container">
+  <div>
   <img src="../../assets/rowtype1.png" alt="two column" height="16" width="32" (click)="setConfig('c1')">
 
   <img src="../../assets/rowtype2.png" alt="three column" height="16" width="32" (click)="setConfig('c2')">
   <img src="../../assets/rowtype1.png" alt="two column" height="16" width="32" (click)="setConfig('c3')">
   <img src="../../assets/rowtype2.png" alt="three column" height="16" width="32" (click)="setConfig('c4')">
+  </div>
+  <div>
+    <ul>
+      <li *ngFor="let col of columns; let i = index" class="lifl">
+        <app-verticle [setRows]="col.spdataList"></app-verticle>
+      </li>
+    </ul>
+  </div>
 
 
-    <div *ngFor="let col of columns; let i = index" class="lifl"cdkDropList class="example-list"
+  <!--  <div *ngFor="let col of columns; let i = index" class="lifl"cdkDropList class="example-list"
 
          [cdkDropListData]="col.spdataList"
          id="dropListDesto"
@@ -15,9 +23,10 @@
       <div *ngFor="let row of col.spdataList;let ii = index">
         <button class="mat-button" (click)="indentLeft(i,ii)"><<</button><button class="mat-button" (click)="indentRight(i,ii)">>></button><app-data [setdata]="row" class="{{cclass}}"></app-data>
       </div>
-    </div>
-
-  <button (click)="setCanArrange(true)">OK</button>
+    </div>-->
+  <div>
+    <button (click)="setCanArrange(true)">OK</button>
+  </div>
 </div>
 <div class="div_top_hypers">
   <button *ngIf="canArrange" (click)="setCanArrange(false)">arrange</button>

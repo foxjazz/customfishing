@@ -10,6 +10,7 @@ import { SprowviewComponent } from './sprowview/sprowview.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { VerticleComponent } from './verticle/verticle.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     DataComponent,
     DriverComponent,
     SpcontainerComponent,
-    SprowviewComponent
+    SprowviewComponent,
+    VerticleComponent
   ],
   imports: [
     BrowserModule,

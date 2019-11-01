@@ -1,11 +1,11 @@
 body{
-  background-color: #fff;
-  color: #4A4A4A;
+  background-color: black;
+  color: #8f8f8f;
 }/* You can add global styles to this file, and also import other style files */
 .gird-container{
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 40px 200px;
+  grid-template-rows: 30px 200px;
 }
 
 html, body { height: 100%; }
@@ -14,7 +14,7 @@ body { margin: 0; font-family: "Akkurat Pro", arial, sans-serif; }
 app-spcontainer {
 	height: 600px;
 	width: 100%;
-    background-color: #f5f5f5;
+    background-color: #010101;
 }
 
 li .div_top_hypers {
@@ -51,7 +51,7 @@ button {
     line-height: 1.25;
     transition: all .15s ease-in-out;
     color: #fff;
-    background-color: green;
+    background-color: #333333;
     border-color: green;
 
 }
