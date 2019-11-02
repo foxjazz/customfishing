@@ -54,7 +54,7 @@ export class SprowviewComponent implements OnInit {
             // tslint:disable-next-line:no-shadowed-variable
             let idx = 0;
             for (const item of c.spdataList){
-              if(item.isSelected) {
+              if (item.isSelected) {
                 c.spdataList.splice(idx,1);
               }
               idx++;

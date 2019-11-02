@@ -1,3 +1,5 @@
+<button class="mat-button" (click)="indentLeft(ii)"><<</button>
+<button class="mat-button" (click)="indentRight(ii)">>></button>
 <mat-list class="example-list"
           cdkDropList
           [cdkDropListData]="rows"
@@ -6,8 +8,7 @@
           (cdkDropListDropped)="drop($event)">
   <div *ngFor="let row of rows;let ii = index">
     index{{index}}
-    <button class="mat-button" (click)="indentLeft(ii)"><<</button>
-    <button class="mat-button" (click)="indentRight(ii)">>></button>
-    <app-data [setdata]="row" class="{{cclass}}" cdkDrag></app-data>
+
+    <app-data [setdata]="row" [index]="ii" class="{{cclass}}" [shooter]="'vertical'" [enable]="true" cdkDrag></app-data>
   </div>
 </mat-list>

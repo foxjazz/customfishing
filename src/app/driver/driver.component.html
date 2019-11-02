@@ -17,7 +17,7 @@
                    [cdkDropListData]="splistData.list"
                    [cdkDropListConnectedTo]="['dropListDesto0']"
     >
-      <app-data [setdata]="link" (click)="select(i)" [cdkDragData]="link" cdkDrag></app-data>
+      <app-data [setdata]="link" (click)="select(i)" [cdkDragData]="link" [shooter]="'driver'" [enable]="true" cdkDrag></app-data>
 
     </mat-list-item>
   </mat-nav-list>
