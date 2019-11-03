@@ -54,12 +54,15 @@ export class VerticleComponent implements OnInit {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else if (event.previousContainer.id = "driver") {
+      this.rows.push(event.container.data[event.previousIndex]);
+/*
         let k = this.rows;
         k.push(event.container.data[event.previousIndex]);
         this.rows = [];
         for (const r of k) {
           this.rows.push(r);
         }
+*/
     }
   }
 }

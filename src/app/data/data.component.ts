@@ -14,11 +14,13 @@ export class DataComponent  {
   public rownumber: number;
   public isSelected = false;
   public direction: string;
+  public subcnt = 0;
   private enableSelect = false;
   @Input() index;
   @Input() shooter;
   @Input() set enable(b: boolean){
     this.enableSelect = b;
+
   }
 
   get indentCss(): string {
@@ -33,23 +35,28 @@ export class DataComponent  {
     this.hds = ds;
     this.selCss = "normal";
     this.hasData = false;
+    this.hds.clearSink.subscribe(() => {
+      if (this.hds.pass != this.pass) {
+        this.data.isSelected = false;
+        this.selCss = "normal";
+        //this.hds.clearSink.unsubscribe();
+      }
+    });
+
    }
   select() {
-    if (!this.enableSelect) {
+    /*if (!this.enableSelect) {
       return;
-    }
+    }*/
     // this.direction = s;
     this.pass = this.hds.pass + 1;
     this.hds.pass = this.pass;
     this.data.isSelected = true;
     this.selCss = "highlight"
+
+
     this.hds.clearSink.next(true);
-    this.hds.clearSink.subscribe(() => {
-      if (this.hds.pass != this.pass) {
-        this.data.isSelected = false;
-        this.selCss = "normal";
-      }
-    });
+    this.subcnt = this.hds.clearSink.observers.length;
   }
 
 
