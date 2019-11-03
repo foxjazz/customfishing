@@ -1,10 +1,6 @@
 <div *ngIf="arrange" class="grid-container">
   <div>
-  <img src="../../assets/rowtype1.png" alt="two column" height="16" width="32" (click)="setConfig('c1')">
 
-  <img src="../../assets/rowtype2.png" alt="three column" height="16" width="32" (click)="setConfig('c2')">
-  <img src="../../assets/rowtype1.png" alt="two column" height="16" width="32" (click)="setConfig('c3')">
-  <img src="../../assets/rowtype2.png" alt="three column" height="16" width="32" (click)="setConfig('c4')">
   </div>
   <div>
     <ul cdkDropListGroup>
@@ -15,15 +11,6 @@
   </div>
 
 
-  <!--  <div *ngFor="let col of columns; let i = index" class="lifl"cdkDropList class="example-list"
-
-         [cdkDropListData]="col.spdataList"
-         id="dropListDesto"
-         (cdkDropListDropped)="drop($event)">
-      <div *ngFor="let row of col.spdataList;let ii = index">
-        <button class="mat-button" (click)="indentLeft(i,ii)"><<</button><button class="mat-button" (click)="indentRight(i,ii)">>></button><app-data [setdata]="row" class="{{cclass}}"></app-data>
-      </div>
-    </div>-->
   <div>
     <button (click)="setCanArrange(true)">OK</button><button (click)="deleteSpData()">Delete</button>
   </div>
@@ -35,7 +22,7 @@
 
       <ul>
         <li *ngFor="let row of col.spdataList" class="example-list">
-          <app-data [setdata]="row" class={{cclass}}></app-data>
+          <app-data [setdata]="row"></app-data>
         </li>
       </ul>
 

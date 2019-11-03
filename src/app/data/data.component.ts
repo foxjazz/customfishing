@@ -39,17 +39,15 @@ export class DataComponent  {
       return;
     }
     // this.direction = s;
-    this.hds.clearSink.next(true);
     this.pass = this.hds.pass + 1;
     this.hds.pass = this.pass;
     this.data.isSelected = true;
     this.selCss = "highlight"
-
+    this.hds.clearSink.next(true);
     this.hds.clearSink.subscribe(() => {
       if (this.hds.pass != this.pass) {
         this.data.isSelected = false;
         this.selCss = "normal";
-        this.hds.clearSink.unsubscribe();
       }
     });
   }

@@ -13,7 +13,7 @@ export class VerticleComponent implements OnInit {
   @Input() index;
 //  rows: spdata[];
   hds: HasdataService;
-  public cclass="";
+
   constructor(private ds: HasdataService) {
     this.hds = ds;
   }
@@ -29,27 +29,37 @@ export class VerticleComponent implements OnInit {
       idx =  1;
     return "dropListDesto" + idx;
   }
-  indentRight(i: number) {
-    const obj = this.rows[i];
-    if (obj.indentStep < 2){
-      obj.indentStep += 1;
+  indentRight() {
+    for(const obj of this.rows) {
+      if(obj.isSelected) {
+        if (obj.indentStep < 2) {
+          obj.indentStep += 1;
+        }
+      }
     }
+  }
+  indentLeft() {
+    for(const obj of this.rows) {
+      if(obj.isSelected) {
+        if (obj.indentStep > 0) {
+          obj.indentStep -= 1;
+        }
+      }
+    }
+  }
 
-  }
-  indentLeft(i: number) {
-    const obj = this.rows[i];
-    if (obj.indentStep > 0) {
-      obj.indentStep -= 1;
-    }
-  }
   drop(event: CdkDragDrop<spdata[]>) {
+    const id = event.previousContainer.id;
+    console.log(id);
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
+    } else if (event.previousContainer.id = "driver") {
+        let k = this.rows;
+        k.push(event.container.data[event.previousIndex]);
+        this.rows = [];
+        for (const r of k) {
+          this.rows.push(r);
+        }
     }
   }
 }
